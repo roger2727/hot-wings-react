@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Nunito", sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  display: flex;
+  justify-content: center;
+  height: 40vh;
+  background-color: #e59a05;
+  width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.label-box {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  width: 300px;
+  gap: 0.5em;
+}
+.btn-box {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 125px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+  background-color: white;
+  border-radius: 5%;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+}
+.btn {
+  margin-top: 20px;
+  width: 100%;
+  font-size: 30px;
+  border-radius: 50px;
+  background-color: #56698f;
+  border: none;
+  box-shadow: 10px 5px 5px rgb(203, 203, 203);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.btn:active {
+  background-color: #7787a5;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.btn :hover {
+  background-color: #7787a5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  padding-top: 20px;
+  text-align: center;
 }
