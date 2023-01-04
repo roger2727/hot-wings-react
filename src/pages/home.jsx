@@ -5,11 +5,11 @@ const home = () => {
   return (
     <div>
       <header>
-        <img class="logo" src={logo} alt="" />
+        <img className="logo" src={logo} alt="" />
       </header>
       <PlayerList />
-      <footer class="footer">
-        <p class="cp-text">© Copyright 2022. All rights reserved</p>
+      <footer className="footer">
+        <p className="cp-text">© Copyright 2022. All rights reserved</p>
       </footer>
     </div>
   );

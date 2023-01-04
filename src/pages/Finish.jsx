@@ -1,30 +1,44 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
-const Finish = () => {
+function Finish() {
+  const [scores, setScores] = useState({});
+
+  useEffect(() => {
+    // Get the scores from session storage
+    const scoresFromStorage = JSON.parse(
+      window.sessionStorage.getItem("scores")
+    );
+    setScores(scoresFromStorage);
+  }, []); // Only run the effect once
+
+  // Get the names of the players
+  let playerNames;
+  let highestScore = 0;
+  let playerWithHighestScore = "";
+
+  if (scores) {
+    playerNames = Object.keys(scores);
+    highestScore = Math.max(...Object.values(scores));
+    playerWithHighestScore = playerNames.find(
+      (name) => scores[name] === highestScore
+    );
+  }
+
   return (
-    <div class="wrapper">
-      <div class="glow"></div>
-      <div class="mask">
-        <div class="btn-box">
-          <a class="btn" href="./index.html">
-            Play Again
-          </a>
-        </div>
-        <div class="container">
-          <div class="star">&#10022;</div>
-          <div class="main">
-            <p>king of wings</p>
-          </div>
-          <div class="stem1"></div>
-          <div class="stemCrease"></div>
-          <div class="stem2"></div>
-          <div class="base"></div>
-
-          <div class="arms"></div>
-        </div>
-      </div>
+    <div className="box">
+      <h2>Results</h2>
+      {playerNames &&
+        playerNames.map((playerName) => (
+          <p key={playerName}>
+            {playerName}: {scores[playerName]}
+          </p>
+        ))}
+      <h2>Winner</h2>
+      <p>
+        {playerWithHighestScore}: {highestScore}
+      </p>
     </div>
   );
-};
+}
 
 export default Finish;

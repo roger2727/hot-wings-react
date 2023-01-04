@@ -1,0 +1,64 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  height: 100vh;
+  align-items: center;
+  width: 100%;
+  margin: 0px 50px 50px 50px;
+}
+.banner {
+  display: flex;
+
+  justify-content: center;
+  background-color: black;
+  width: 100%;
+}
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.group-challange {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.overlap {
+  position: relative;
+}
+
+.overlap img {
+  position: relative;
+}
+
+.overlap p {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: 50px;
+  font-weight: 800;
+}
+.challange-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 100px;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: aliceblue;
+  width: 100%;
+  border-radius: 100px;
+
+  padding: 1rem;
+}
