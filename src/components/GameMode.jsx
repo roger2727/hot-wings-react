@@ -140,17 +140,14 @@ function RandomNumberAndCurrentPlayer(props) {
         )}
 
         {randomChallenge && (
-          <div className="challange-group">
-            <h2> Challenge:</h2>
-            <h3> {randomChallenge}</h3>
-            <button
-              onClick={handleNextPlayerClick}
-              disabled={!randomNumberGenerated}
-            >
-              Next Player
-            </button>
-          </div>
+          <h3>{randomNumberGenerated ? <div>{randomChallenge}</div> : null}</h3>
         )}
+        <button
+          onClick={handleNextPlayerClick}
+          disabled={!randomNumberGenerated}
+        >
+          Next Player
+        </button>
       </div>
     </div>
   );

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import logo from "../images/logo1.png";
+import "./GameStart.css";
 
 function PlayerList() {
   const [players, setPlayers] = useState([]);
@@ -41,64 +43,78 @@ function PlayerList() {
   };
 
   return (
-    <div>
-      {error && <p>{error}</p>}
-      <form onSubmit={handlePlayerSubmit}>
-        <label>
-          Player name:
-          <input type="text" name="playerName" />
-        </label>
-        <button type="submit" disabled={players.length >= 5}>
-          Add player
-        </button>
-        {players.length >= 5 && <p>Maximum number of players reached</p>}
-      </form>
-      <form>
-        <label>
-          Number of hot sauces:
-          <select
-            name="numHotSauces"
-            value={numHotSauces}
-            onChange={handleHotSauceChange}
-            required
-          >
-            <option value={0}>Select a number</option>
-            {[...Array(8)].map((_, i) => (
-              <option key={i + 3} value={i + 3}>
-                {i + 3}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Number of rounds:
-          <select
-            name="numRounds"
-            value={numRounds}
-            onChange={handleRoundsChange}
-            required
-          >
-            <option value={0}>Select a number</option>
-            {[...Array(16)].map((_, i) => (
-              <option key={i + 5} value={i + 5}>
-                {i + 5}
-              </option>
-            ))}
-          </select>
-        </label>
-      </form>
-      <ul>
+    <div className="box">
+      <div className="starto">
+        <img className="logo" src={logo} alt="" />
+      </div>
+
+      <div className="form-box">
+        <form onSubmit={handlePlayerSubmit}>
+          <div>
+            <label>
+              Player name:
+              <input type="text" name="playerName" />
+            </label>
+            <button
+              className="add-btn"
+              type="submit"
+              disabled={players.length >= 5}
+            >
+              Add player
+            </button>
+          </div>
+          {players.length >= 5 && (
+            <p className="error-text">Maximum number of players reached</p>
+          )}
+        </form>
+        <form>
+          <label>
+            Number of hot sauces:
+            <select
+              name="numHotSauces"
+              value={numHotSauces}
+              onChange={handleHotSauceChange}
+              required
+            >
+              <option value={0}>Select a number</option>
+              {[...Array(8)].map((_, i) => (
+                <option key={i + 3} value={i + 3}>
+                  {i + 3}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Number of rounds:
+            <select
+              name="numRounds"
+              value={numRounds}
+              onChange={handleRoundsChange}
+              required
+            >
+              <option value={0}>Select a number</option>
+              {[...Array(16)].map((_, i) => (
+                <option key={i + 5} value={i + 5}>
+                  {i + 5}
+                </option>
+              ))}
+            </select>
+          </label>
+        </form>
+      </div>
+      <ul className="players-box">
         {players.map((player) => (
-          <li key={player.number}>
+          <li className="player" key={player.number}>
             Player {player.number}: {player.name}
           </li>
         ))}
       </ul>
-      {players.length > 0 && (
+      {players.length > 0 && numRounds > 0 && (
         <button type="button" onClick={handleSubmit}>
           Submit
         </button>
       )}
+      {error && <p className="error-text">{error}</p>}
     </div>
   );
 }

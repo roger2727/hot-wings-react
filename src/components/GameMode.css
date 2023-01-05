@@ -20,11 +20,7 @@
   align-items: center;
   gap: 2rem;
 }
-.group-challange {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .overlap {
   position: relative;
   height: 210px;
@@ -50,11 +46,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 100px;
-  width: 100%;
-  gap: 1rem;
+
+  border-radius: 10px;
+  gap: 0.5rem;
   padding: 1rem;
+  background-color: #6fafc6;
 }
+
 .top {
   display: flex;
   flex-direction: column;
@@ -79,4 +77,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+button {
+  /* other styles */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* add a text shadow to the button label */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* base styles for the button */
+  border: solid 1px #e4b200; /* remove the default border */
+  outline: none; /* remove the default outline */
+  cursor: pointer; /* change the cursor to a pointer when the button is hovered */
+  padding: 10px 20px; /* add some padding to the button */
+  font-size: 16px; /* set the font size for the button label */
+  background-color: #e4b200; /* set the background color for the button */
+  color: black; /* set the text color for the button label */
+  border-radius: 20px; /* add some rounding to the corners of the button */
+}
+button:hover {
+  /* styles for the button when it is hovered */
+  background-color: #ffca2d; /* change the background color on hover */
+  /* change the text color on hover */
+}
+button {
+  /* other styles */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* add a transition effect to the button */
 }

@@ -1,0 +1,35 @@
+.starto {
+  display: flex;
+
+  justify-content: center;
+  background-color: #e49a06;
+  width: 100%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem;
+}
+.add-btn {
+  padding: 5px;
+  margin-left: 10px;
+}
+.players-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem;
+}
+.player {
+  list-style-type: none;
+}
+.error-text {
+  margin: 2rem;
+  color: red;
+}
