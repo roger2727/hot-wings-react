@@ -21,8 +21,9 @@ form {
   border-radius: 20px;
 }
 .add-btn {
-  padding: 5px;
-  margin-left: 10px;
+  padding: 2px;
+  margin: 2px;
+  box-shadow: none;
 }
 .players-box {
   display: flex;
@@ -32,7 +33,7 @@ form {
   background-color: white;
 
   border-radius: 20px;
-  width: 75%;
+  width: 80%;
   align-items: center;
 }
 .player {
