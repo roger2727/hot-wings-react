@@ -4,6 +4,8 @@ import hotsauce from "../images/hotsauce.png";
 import gamelogo from "../images/game-logo1.png";
 
 function RandomNumberAndCurrentPlayer(props) {
+  const [isRotated, setIsRotated] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const [scores, setScores] = useState({});
   const [round, setRound] = useState(1);
   const [randomNumber, setRandomNumber] = useState(null);
@@ -80,7 +82,13 @@ function RandomNumberAndCurrentPlayer(props) {
     const newRandomChallenge =
       challenges[Math.floor(Math.random() * challenges.length)];
     setRandomChallenge(newRandomChallenge);
+    setIsRotated(true);
   };
+  useEffect(() => {
+    if (!buttonClicked) {
+      setIsRotated(false);
+    }
+  }, [buttonClicked]);
   const handleNextPlayerClick = () => {
     // Reset the randomNumberGenerated state to false
     setRandomNumberGenerated(false);
@@ -121,12 +129,12 @@ function RandomNumberAndCurrentPlayer(props) {
         </button>
 
         {randomNumberGenerated && (
-          <div className="hot-back">
-            <div className="overlap">
-              <img src={hotsauce} />
-              <p>
-                <strong></strong> {randomNumber}
-              </p>
+          <div className="overlap">
+            <div className={`rotate-on-click ${isRotated ? "rotated" : ""}`}>
+              <img src={hotsauce} className={isRotated ? "rotate" : ""} />
+              <div className="o">
+                <p className={isRotated ? "rotate" : ""}>{randomNumber}</p>
+              </div>
             </div>
           </div>
         )}
