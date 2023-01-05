@@ -19,7 +19,11 @@ function RandomNumberAndCurrentPlayer(props) {
     "Have a drink",
     "Choose someone to take a shot",
     "Eat 2x wings",
-    "Choose some one to eat you wing",
+    "Choose some one to eat your wing",
+    "skip your wing",
+    "last person to touch the floor does a shot",
+    "evryone do a shot",
+    "everyone have a drink",
   ];
   // Define playersFromStorage here so it's available to both useEffect hooks
   const playersFromStorage = JSON.parse(
