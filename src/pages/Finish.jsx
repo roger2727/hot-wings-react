@@ -35,7 +35,7 @@ function Finish() {
               <h2 className="result-head">Results</h2>
               {playerNames &&
                 playerNames.map((playerName) => (
-                  <p key={playerName}>
+                  <p className="pl" key={playerName}>
                     {playerName}: {scores[playerName]}
                   </p>
                 ))}
