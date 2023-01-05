@@ -4,7 +4,7 @@ import "./Game.css";
 import RandomNumberAndCurrentPlayer from "../components/GameMode";
 const Game = () => {
   return (
-    <div className="container">
+    <div className="game-container">
       <RandomNumberAndCurrentPlayer />
     </div>
   );

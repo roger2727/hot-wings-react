@@ -131,9 +131,9 @@ function RandomNumberAndCurrentPlayer(props) {
         {randomNumberGenerated && (
           <div className="overlap">
             <div className={`rotate-on-click ${isRotated ? "rotated" : ""}`}>
-              <img src={hotsauce} className={isRotated ? "rotate" : ""} />
+              <img src={hotsauce} className={isRotated ? "rotater" : ""} />
               <div className="o">
-                <p className={isRotated ? "rotate" : ""}>{randomNumber}</p>
+                <p className={isRotated ? "rotater" : ""}>{randomNumber}</p>
               </div>
             </div>
           </div>

@@ -4,4 +4,12 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  height: 101vh;
+  background-color: black;
+}
+.footer {
+  background-color: #e49a06;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
 }

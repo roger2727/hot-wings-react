@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../images/logo1.png";
+import logo from "../images/game-logo1.png";
 import "./GameStart.css";
 
 function PlayerList() {
@@ -67,6 +67,7 @@ function PlayerList() {
             <p className="error-text">Maximum number of players reached</p>
           )}
         </form>
+
         <form>
           <label>
             Number of hot sauces:

@@ -65,12 +65,12 @@
   padding: 1rem;
 }
 
-.rotate {
+.rotater {
   height: 10px;
-  animation: rotate 250ms linear;
+  animation: rotater 250ms linear;
 }
 
-@keyframes rotate {
+@keyframes rotater {
   from {
     transform: rotate(0deg);
   }
