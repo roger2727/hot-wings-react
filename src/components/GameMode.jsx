@@ -143,6 +143,7 @@ function RandomNumberAndCurrentPlayer(props) {
           <h3>{randomNumberGenerated ? <div>{randomChallenge}</div> : null}</h3>
         )}
         <button
+          className="next"
           onClick={handleNextPlayerClick}
           disabled={!randomNumberGenerated}
         >

@@ -47,25 +47,25 @@ function PlayerList() {
       <div className="starto">
         <img className="logo" src={logo} alt="" />
       </div>
-
+      {players.length >= 5 && (
+        <p className="error-text">Maximum number of players reached</p>
+      )}
+      {error && <p className="error-text">{error}</p>}
       <div className="form-box">
         <form onSubmit={handlePlayerSubmit}>
-          <div>
+          <div className="name-box">
+            Player name
             <label>
-              Player name:
-              <input type="text" name="playerName" />
+              <input type="text" name="playerName" placeholder="enter name" />
             </label>
             <button
               className="add-btn"
               type="submit"
               disabled={players.length >= 5}
             >
-              Add player
+              Add Player
             </button>
           </div>
-          {players.length >= 5 && (
-            <p className="error-text">Maximum number of players reached</p>
-          )}
         </form>
 
         <form>
@@ -102,20 +102,19 @@ function PlayerList() {
             </select>
           </label>
         </form>
+        <ul className="players-box">
+          {players.map((player) => (
+            <li className="player" key={player.number}>
+              {player.number}. {player.name}
+            </li>
+          ))}
+        </ul>
+        {players.length > 0 && numRounds > 0 && (
+          <button className="next" type="button" onClick={handleSubmit}>
+            Submit
+          </button>
+        )}
       </div>
-      <ul className="players-box">
-        {players.map((player) => (
-          <li className="player" key={player.number}>
-            Player {player.number}: {player.name}
-          </li>
-        ))}
-      </ul>
-      {players.length > 0 && numRounds > 0 && (
-        <button type="button" onClick={handleSubmit}>
-          Submit
-        </button>
-      )}
-      {error && <p className="error-text">{error}</p>}
     </div>
   );
 }

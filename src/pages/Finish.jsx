@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Finish.css";
+import { Link } from "react-router-dom";
 function Finish() {
   const [scores, setScores] = useState({});
 
@@ -27,18 +28,28 @@ function Finish() {
   return (
     <div className="finish-box">
       <div class="wrapper">
-        <h2 className="winner">Winner!</h2>
         <div class="glow"></div>
         <div class="mask">
           <div class="btn-box">
-            <a class="btn" href="./index.html">
-              Play Again
-            </a>
+            <div className="results-page">
+              <h2 className="result-head">Results</h2>
+              {playerNames &&
+                playerNames.map((playerName) => (
+                  <p key={playerName}>
+                    {playerName}: {scores[playerName]}
+                  </p>
+                ))}
+              <Link class="btn" to="/">
+                Play Again
+              </Link>
+            </div>
           </div>
+
           <div class="finish-container">
             <div class="star">&#10022;</div>
             <div class="finish-main">
               <p className="trophy-label">
+                <h4 className="winner">Winner!</h4>
                 <p>{playerWithHighestScore}</p>
               </p>
             </div>
@@ -49,15 +60,6 @@ function Finish() {
 
             <div class="arms"></div>
           </div>
-        </div>
-        <div className="results-page">
-          <h2>Results</h2>
-          {playerNames &&
-            playerNames.map((playerName) => (
-              <p key={playerName}>
-                {playerName}: {scores[playerName]}
-              </p>
-            ))}
         </div>
       </div>
     </div>

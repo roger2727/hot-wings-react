@@ -58,10 +58,10 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background-color: aliceblue;
+  background-color: white;
   width: 100%;
-  border-radius: 100px;
-  height: 100%;
+  border-radius: 50px;
+  height: 600px;
   padding: 1rem;
 }
 
@@ -100,4 +100,17 @@ button:hover {
 button {
   /* other styles */
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* add a transition effect to the button */
+}
+.next {
+  background-color: #56698f;
+  color: white;
+  border: black;
+}
+.next:hover {
+  background-color: #7787a5;
+}
+@media (min-width: 600px) {
+  .box {
+    width: 40%;
+  }
 }
