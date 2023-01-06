@@ -14,17 +14,34 @@ function RandomNumberAndCurrentPlayer(props) {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [randomChallenge, setRandomChallenge] = useState(null);
   const [randomNumberGenerated, setRandomNumberGenerated] = useState(false);
-  const challenges = [
-    "Take a shot",
+  const checkboxValue = window.sessionStorage.getItem("checkboxValue");
+  const checkboxValue2 = window.sessionStorage.getItem("checkboxValue2");
+  const easyChallenges = [
+    "down your drnk",
     "Have a drink",
-    "Choose someone to take a shot",
+    "Choose someone to have a drink",
     "Eat 2x wings",
     "Choose some one to eat your wing",
     "skip your wing",
-    "last person to touch the floor does a shot",
-    "evryone do a shot",
+    "last person to touch the floor downs your drink",
+    "evryone downs there drink",
     "everyone have a drink",
   ];
+  const challenges =
+    checkboxValue2 === "true"
+      ? easyChallenges
+      : [
+          "Take a shot",
+          "Have a drink",
+          "Choose someone to take a shot",
+          "Eat 2x wings",
+          "Choose some one to eat your wing",
+          "skip your wing",
+          "last person to touch the floor does a shot",
+          "evryone do a shot",
+          "everyone have a drink",
+        ];
+
   // Define playersFromStorage here so it's available to both useEffect hooks
   const playersFromStorage = JSON.parse(
     window.sessionStorage.getItem("players")
@@ -144,7 +161,13 @@ function RandomNumberAndCurrentPlayer(props) {
         )}
 
         {randomChallenge && (
-          <h3>{randomNumberGenerated ? <div>{randomChallenge}</div> : null}</h3>
+          <h3>
+            {randomNumberGenerated ? (
+              <div className="chall-box">
+                <p>{randomChallenge}</p>
+              </div>
+            ) : null}
+          </h3>
         )}
         <button
           className="next"

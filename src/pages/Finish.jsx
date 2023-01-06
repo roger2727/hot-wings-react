@@ -27,10 +27,10 @@ function Finish() {
 
   return (
     <div className="finish-box">
-      <div class="wrapper">
-        <div class="glow"></div>
-        <div class="mask">
-          <div class="btn-box">
+      <div className="wrapper">
+        <div className="glow"></div>
+        <div className="mask">
+          <div className="btn-box">
             <div className="results-page">
               <h2 className="result-head">Results</h2>
               {playerNames &&
@@ -39,26 +39,26 @@ function Finish() {
                     {playerName}: {scores[playerName]}
                   </p>
                 ))}
-              <Link class="btn" to="/">
+              <Link className="btn" to="/">
                 Play Again
               </Link>
             </div>
           </div>
 
-          <div class="finish-container">
-            <div class="star">&#10022;</div>
-            <div class="finish-main">
-              <p className="trophy-label">
-                <h4 className="winner">Winner!</h4>
+          <div className="finish-container">
+            <div className="star">&#10022;</div>
+            <div className="finish-main">
+              <h1 className="trophy-label">
+                <p className="winner">Winner!</p>
                 <p>{playerWithHighestScore}</p>
-              </p>
+              </h1>
             </div>
-            <div class="stem1"></div>
-            <div class="stemCrease"></div>
-            <div class="stem2"></div>
-            <div class="base"></div>
+            <div className="stem1"></div>
+            <div className="stemCrease"></div>
+            <div className="stem2"></div>
+            <div className="base"></div>
 
-            <div class="arms"></div>
+            <div className="arms"></div>
           </div>
         </div>
       </div>
