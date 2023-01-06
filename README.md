@@ -1,4 +1,4 @@
-Link to Game [click here](https://hot-wings-react-ed59x2qn3-roger2727.vercel.app/)
+Link to Game [click here](https://hot-wings-react-5bo8b2ka9-roger2727.vercel.app/)
 
 # King Of Wings Game
 
